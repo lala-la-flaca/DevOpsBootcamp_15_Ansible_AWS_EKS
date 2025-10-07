@@ -1,0 +1,18 @@
+---
+- name: Deploy application in new namespace
+  hosts: localhost
+  tasks:
+  - name: Create a k8s namespace
+    kubernetes.core.k8s:
+      name: my-app
+      api_version: v1
+      kind: Namespace
+      #kubeconfig: /home/lala/DevOpsBootCamp/terraform/Demo1/kubeconfiig_my_app-eks-cluster
+    
+  - name: Deply nginx application
+    kubernetes.core.k8s:
+      src: /home/lala/DevOpsBootCamp/aws-eks/demo1/nginx-config.yaml
+      state: present
+      #kubeconfig: /home/lala/DevOpsBootCamp/terraform/Demo1/kubeconfiig_my_app-eks-cluster
+      namespace: my-app
+

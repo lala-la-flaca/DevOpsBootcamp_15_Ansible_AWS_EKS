@@ -119,13 +119,12 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
        deactivate
      ```
   </details>
-   
-     ```bash
-     python3 -c "import YAML"
-     python3 -c "import jsonptach"
-     python3 -c "import kubernetes"
-     ```
-     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/5%20checking%20that%20th%20emodules%20are%20installed.PNG" width=800 />
+    ```bash
+         python3 -c "import YAML"
+         python3 -c "import jsonptach"
+         python3 -c "import kubernetes"
+      ```
+      <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/5%20checking%20that%20th%20emodules%20are%20installed.PNG" width=800 />
    
 7. Install Python dependencies
     ```bash
@@ -158,7 +157,6 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
     ```
     
 12. Deploy the NGINX application.<br>
-    
     Add a second task in your playbook to deploy the NGINX app to the Kubernetes cluster using files from previous modules.<br>
     
     ```bash
@@ -182,8 +180,9 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
      
 14. Verify connectivity <br>
     Confirm that the Ansible playbook can successfully connect to the EKS cluster.<br>
-    
-    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/eks%20cluster%20runnig.PNG" width=800 />
+    ```bash
+    ansible-playbook deploy-to-eks.yaml
+    ```
     
 15. Verify nginx is running
     ```bash

@@ -160,7 +160,7 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
 15. List namespaces in the cluster
     
     ```bash
-    kubectl get namespaces
+    kubectl get ns
     ```
      <img src="" width=800 />
      
@@ -195,7 +195,7 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
 
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/nginx%20pod%20running%20in%20eks.png" width=800 />
     
-20. Check the kubernetes service
+20. Check the Kubernetes service
     ```bash
     kubectl  get services -ns my-app
     ```

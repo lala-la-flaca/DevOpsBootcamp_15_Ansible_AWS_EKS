@@ -113,12 +113,14 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
    <details><summary><strong> Activate/ Deactivate Python ENV </strong></summary>
      Activate virtual ENV to install modules<br>
      ```bash
-         python3 -m venv venv
-         source venv/bin/activate
+      python3 -m venv venv
+      source venv/bin/activate
+     ```
+     <br>
+    ```bash
+    deactivate
     ```
-     ```bash
-          deactivate
-    ```
+     <br>
    </details>
    
      ```bash

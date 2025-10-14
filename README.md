@@ -110,15 +110,15 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
     
    Ensure the following Python modules are installed: PyYAML, jsonpatch, and kubernetes.
    <details><summary><strong> Activate/ Deactivate Python ENV </strong></summary>
-       Activate virtual ENV to install modules
-       ```bash
+    Activate virtual ENV to install modules
+     ```bash
          python3 -m venv venv
          source venv/bin/activate
-       ```
-       ```bash
+     ```
+     ```bash
         deactivate
-       ```
-   </details>
+     ```
+  </details>
    
    ```bash
    python3 -c "import YAML"

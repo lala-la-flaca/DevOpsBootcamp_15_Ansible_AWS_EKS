@@ -187,8 +187,8 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
     ```
      <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/kubeconfig%20env%20var.PNG" width=800 />
      
-18. Verify connectivity
-    Confirm that the Ansible playbook can successfully connect to the EKS cluster.
+18. Verify connectivity <br>
+    Confirm that the Ansible playbook can successfully connect to the EKS cluster.<br>
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/eks%20cluster%20runnig.PNG" width=800 />
     

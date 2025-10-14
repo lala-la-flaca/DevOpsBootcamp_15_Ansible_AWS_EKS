@@ -197,7 +197,7 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
     
 20. Check the Kubernetes service
     ```bash
-    kubectl  get services -ns my-app
+    kubectl  get services -n my-app
     ```
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/checking%20svc.png" width=800/>
     

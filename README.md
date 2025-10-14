@@ -64,9 +64,11 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
   
 2. Create the kubeconfig file
    Generate the kubeconfig file for your EKS cluster and save it in your preferred location:
+   
+   ```bash
    aws eks update-kubeconfig --region us-east-2 --name myapp-eks-cluster --kubeconfig ~/terraform
    ```
-    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/2%20creating%20aws%20eks%20kubeconfig%20file.PNG" width=800 />
+  <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/2%20creating%20aws%20eks%20kubeconfig%20file.PNG" width=800 />
     
 3. Create a new Ansible playbook.
    Switch to Ansible and create a new YAML file.

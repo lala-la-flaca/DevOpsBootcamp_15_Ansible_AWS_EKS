@@ -146,7 +146,7 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
 13. Run the Ansible playbook
     Execute your playbook to apply the configuration.
     ```bash
-    ansible-playbook 
+    ansible-playbook deploy-to-eks.yaml
     ```
      <img src="" width=800 />
     
@@ -183,7 +183,7 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
     Use the environment variable K8S_AUTH_KUBECONFIG to load the kubeconfig file automatically:<br>
     
     ```bash
-    export K8S_AUTH_KUBECOFNIG=/users/path/to/kubeconfig_file
+    export K8S_AUTH_KUBECONFIG=/users/path/to/kubeconfig_file
     ```
      <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/kubeconfig%20env%20var.PNG" width=800 />
      

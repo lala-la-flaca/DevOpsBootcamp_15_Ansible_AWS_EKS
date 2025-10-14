@@ -144,8 +144,7 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
     ```bash
     ansible-playbook deploy-to-eks.yaml
     ```
-    <img src="" width=800 />
-    
+        
 10. Set the kubeconfig for CLI access.
 
     ```bash

@@ -27,7 +27,7 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
   * python >=3.6
   * boto3 >= 1.26.0
   * botocore >= 1.29.0 
-* Python modules require to execute  the K8 module:
+* Python modules require these dependencies to execute the K8 module:
   * python >= 3.6
   * kubernetes >= 12.0.0
   * PyYAML >= 3.11
@@ -39,7 +39,7 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
 ## Create the EKS Cluster with Terraform
 1. Run the EKS Terraform demo
    Use the provided Terraform files to create the EKS cluster.
-   [Terraform Files]()
+   [Terraform Files](https://gitlab.com/devopsbootcamp4095512/devopsbootcamp_12_terraform_aws/-/tree/demo/ansible-terraform-3-eks?ref_type=heads)
    
 3. Initialize Terraform.
    ```bash
@@ -53,9 +53,9 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
    terraform apply --auto-approve
    ```
    
-5. Verify the EKS cluster in AWS console.
+5. Verify the EKS cluster in the AWS console.
    
-   <img src="" width=800/>
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/eks%20cluster%20runnig.PNG" width=800/>
 
    
 ## Configure EKS with Ansible
@@ -66,18 +66,16 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
    Generate the kubeconfig file for your EKS cluster and save it in your preferred location:
    aws eks update-kubeconfig --region us-east-2 --name myapp-eks-cluster --kubeconfig ~/terraform
    ```
-    <img src="" width=800 />
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/2%20creating%20aws%20eks%20kubeconfig%20file.PNG" width=800 />
     
 3. Create a new Ansible playbook.
    Switch to Ansible and create a new YAML file.
    
-   <img src="" width=800 />
-  
 4. Define a play named deploy app in a new namespace.
     ```bash
     
    ```
-   <img src="" width=800 />
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/play%201%20task%201.PNG" width=800 />
     
 5. Specify the kubeconfig path:
     Set the kubeconfig attribute in your playbook to specify the path to your kubeconfig file.
@@ -107,7 +105,7 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
    python3 -c "import jsonptach"
    python3 -c "import kubernetes"
    ```
-   <img src="" width=800 />
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/5%20checking%20that%20th%20emodules%20are%20installed.PNG" width=800 />
    
 7. Install Python dependencies
 
@@ -116,7 +114,7 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
    pip3 install jsonpatch
    pip3 install kubernetes
    ```
-   <img src="" width=800 />
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/6%20installing%20modules.png" width=800 />
    
 8. Verify the Ansible inventory
     Confirm that the inventory file points to the correct hosts.
@@ -156,17 +154,18 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
     ```bash
     export K8S_AUTH_KUBECOFNIG=/users/path/to/kubeconfig_file
     ```
-     <img src="" width=800 />
+     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/kubeconfig%20env%20var.PNG" width=800 />
      
 15. Verify connectivity
-
     Confirm that the Ansible playbook can successfully connect to the EKS cluster.
     
-    <img src="" width=800 />
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/eks%20cluster%20runnig.PNG" width=800 />
     
-16. Verify nginx is running
+17. Verify nginx is running
 
-    <img src="" width=800 />
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/nginx%20pod%20running%20in%20eks.png" width=800 />
     
-    
+18. Access to Nginx
+
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/nginx%20up.PNG" width=800 />
  

@@ -131,44 +131,44 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
      <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/5%20checking%20that%20th%20emodules%20are%20installed.PNG" width=800 />
    
 10. Install Python dependencies
+    ```bash
+     pip3 install pyyaml
+     pip3 install jsonpatch
+     pip3 install kubernetes
+    ```
 
-   ```bash
-   pip3 install pyyaml
-   pip3 install jsonpatch
-   pip3 install kubernetes
-   ```
-   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/6%20installing%20modules.png" width=800 />
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/6%20installing%20modules.png" width=800 />
    
-11. Verify the Ansible inventory
+12. Verify the Ansible inventory
     Confirm that the inventory file points to the correct hosts.
      <img src="" width=800 />
     
-12. Run the Ansible playbook
+13. Run the Ansible playbook
     Execute your playbook to apply the configuration.
     ```bash
     ansible-playbook 
     ```
      <img src="" width=800 />
     
-13. Set the kubeconfig for CLI access
+14. Set the kubeconfig for CLI access
     
     ```bash
     export KUBECOFNIG=/users/path/to/kubeconfig_file
     ```
      <img src="" width=800 />
      
-14. List namespaces in the cluster
+15. List namespaces in the cluster
     
     ```bash
     kubectl get namespaces
     ```
      <img src="" width=800 />
      
-15. Deploy the NGINX application.
+16. Deploy the NGINX application.
     
     Add a second task in your playbook to deploy the NGINX app to the Kubernetes cluster using files from previous modules.
     ```bash
-    - name: Deply nginx application
+    - name: Deploy nginx application
       kubernetes.core.k8s:
         src: /home/lala/DevOpsBootCamp/aws-eks/demo1/nginx-config.yaml
         state: present
@@ -176,9 +176,9 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
         namespace: my-app
     ```
 
-    <img src="" width=800 />
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/play%201%20task%202.PNG" width=800 />
     
-16. Set the environment variable for Ansible
+17. Set the environment variable for Ansible
     Use the environment variable K8S_AUTH_KUBECONFIG to load the kubeconfig file automatically:
     
     ```bash
@@ -186,16 +186,22 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
     ```
      <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/kubeconfig%20env%20var.PNG" width=800 />
      
-17. Verify connectivity
+18. Verify connectivity
     Confirm that the Ansible playbook can successfully connect to the EKS cluster.
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/eks%20cluster%20runnig.PNG" width=800 />
     
-18. Verify nginx is running
+19. Verify nginx is running
 
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/nginx%20pod%20running%20in%20eks.png" width=800 />
     
-19. Access to Nginx
+20. Check the kubernetes service
+    ```bash
+    kubectl  get services -ns my-app
+    ```
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/checking%20svc.png" width=800/>
+    
+22. Access to Nginx
 
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/nginx%20up.PNG" width=800 />
  

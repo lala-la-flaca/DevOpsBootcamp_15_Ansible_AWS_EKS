@@ -152,17 +152,21 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
     
 13. Set the environment variable for Ansible
     Use the environment variable K8S_AUTH_KUBECONFIG to load the kubeconfig file automatically:
+    
     ```bash
     export K8S_AUTH_KUBECOFNIG=/users/path/to/kubeconfig_file
     ```
      <img src="" width=800 />
      
-14. Verify connectivity
+15. Verify connectivity
+
     Confirm that the Ansible playbook can successfully connect to the EKS cluster.
+    
     <img src="" width=800 />
     
-15. Verify nginx is running
-     <img src="" width=800 />
+16. Verify nginx is running
+
+    <img src="" width=800 />
     
     
  

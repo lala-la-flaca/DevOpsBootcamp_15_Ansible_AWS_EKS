@@ -36,49 +36,70 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
 # 🏗 Project Architecture
 
 # ⚙️ Project Configuration
-## Terraform to deploy infrastructure
-1. Create the EKS cluster with Terraform using the EKS Terraform demo.
+## Create the EKS Cluster with Terraform
+1. Run the EKS Terraform demo
+   Use the provided Terraform files to create the EKS cluster.
    [Terraform Files]()
    
-3. Initialize Terraform  
+3. Initialize Terraform.
    ```bash
      terraform init
    ```
   
-4. Deploy AWS infrastructure using Terraform
+4. Deploy the AWS infrastructure
    
    ```bash
    terraform plan
    terraform apply --auto-approve
    ```
    
-5. Check EKS cluster.
+5. Verify the EKS cluster in AWS console.
    
    <img src="" width=800/>
 
    
-## Ansible to configure EKS
-2. Ansible documentation for this module: [Ansible EKS module](https://docs.ansible.com/ansible/latest/collections/kubernetes/core/k8s_module.html#ansible-collections-kubernetes-core-k8s-module)
-3. Create the kubeconfig of the EKS cluster and save it in the desired location.
+## Configure EKS with Ansible
+1. Review the Ansible EKS module documentation:
+   [Ansible EKS module](https://docs.ansible.com/ansible/latest/collections/kubernetes/core/k8s_module.html#ansible-collections-kubernetes-core-k8s-module)
+  
+2. Create the kubeconfig file
+   Generate the kubeconfig file for your EKS cluster and save it in your preferred location:
    aws eks update-kubeconfig --region us-east-2 --name myapp-eks-cluster --kubeconfig ~/terraform
    ```
-4. Switch to Ansible and create a new YAML file.
-5. Create a new play named deploy app in a new namespace.
-6. Use the kubeconfig attribute to point to the path of the kubeconfig file.
+    <img src="" width=800 />
+    
+3. Create a new Ansible playbook.
+   Switch to Ansible and create a new YAML file.
+   
+   <img src="" width=800 />
+  
+4. Define a play named deploy app in a new namespace.
+    ```bash
+    
+   ```
+   <img src="" width=800 />
+    
+5. Specify the kubeconfig path:
+    Set the kubeconfig attribute in your playbook to specify the path to your kubeconfig file.
    <details><summary><strong> kubeconfig attribute </strong></summary>
-     If the location of the file is not specified, then it considers the kubeconfig file default location ~/.kube/config
+     If no location is specified, Ansible uses the default path: ~/.kube/config
    </details>
    
-9. Ensure the Python modules  listed above  for this module are available: PyYAML, jsonpatch, kubernetes.
+   ```bash
+   ```
+   
+6. Verify Python dependencies.
+    
+   Ensure the following Python modules are installed: PyYAML, jsonpatch, and kubernetes.
    <details><summary><strong> Activate/ Deactivate Python ENV </strong></summary>
-     Activate virtual ENV to install modules
-     ```bash
-     python3 -m venv venv
-     source venv/bin/activate
-     ```
-     ```bash
-      deactivate
-     ```
+       Activate virtual ENV to install modules
+       ```bash
+         python3 -m venv venv
+         source venv/bin/activate
+       ```
+       ```bash
+        deactivate
+       ```
    </details>
    
    ```bash
@@ -86,27 +107,62 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
    python3 -c "import jsonptach"
    python3 -c "import kubernetes"
    ```
-11. Install requirements PyYAML, jsonpatch, and kubernetes.
+   <img src="" width=800 />
+   
+7. Install Python dependencies
+
    ```bash
    pip3 install pyyaml
    pip3 install jsonpatch
    pip3 install kubernetes
    ```
-12. Verify the host to configuration and chck that inventory points to hosts.
-13. Execute Ansible playbook.
-14. Go to the terminal and set kubeconfig to point to our EKS cluster to get CLI access.
-  ```bash
+   <img src="" width=800 />
+   
+8. Verify the Ansible inventory
+    Confirm that the inventory file points to the correct hosts.
+     <img src="" width=800 />
+    
+9. Run the Ansible playbook
+    Execute your playbook to apply the configuration.
+    ```bash
+    ```
+     <img src="" width=800 />
+    
+10. Set the kubeconfig for CLI access
+    
+    ```bash
     export KUBECOFNIG=/users/path/to/kubeconfig_file
-  ```
-14. Get namespaces
+    ```
+     <img src="" width=800 />
+     
+11. List namespaces in the cluster
+    
     ```bash
     kubectl get namespaces
     ```
-15. Create a second task to deploy the nginx app in the K8 cluster using the nginx files from previous modules.
-16. Set K8S_AUTH_KUBECOFNIG env variable to load the kubeconfig without specifying the kubeconfig attribute. Therefore, Ansible knows which file to use to execute all tasks.
+     <img src="" width=800 />
+     
+12. Deploy the NGINX application.
+    
+    Add a second task in your playbook to deploy the NGINX app to the Kubernetes cluster using files from previous modules.
+    ```bash
+    ```
+
+    <img src="" width=800 />
+    
+13. Set the environment variable for Ansible
+    Use the environment variable K8S_AUTH_KUBECONFIG to load the kubeconfig file automatically:
     ```bash
     export K8S_AUTH_KUBECOFNIG=/users/path/to/kubeconfig_file
     ```
-17. Ansible playbook should be able to connect to EKS
+     <img src="" width=800 />
+     
+14. Verify connectivity
+    Confirm that the Ansible playbook can successfully connect to the EKS cluster.
+    <img src="" width=800 />
+    
+15. Verify nginx is running
+     <img src="" width=800 />
+    
     
  

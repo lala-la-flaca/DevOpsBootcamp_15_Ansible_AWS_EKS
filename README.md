@@ -68,27 +68,45 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
    ```bash
    aws eks update-kubeconfig --region us-east-2 --name myapp-eks-cluster --kubeconfig ~/terraform
    ```
-  <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/2%20creating%20aws%20eks%20kubeconfig%20file.PNG" width=800 />
+
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/2%20creating%20aws%20eks%20kubeconfig%20file.PNG" width=800 />
     
-3. Create a new Ansible playbook.
+4. Create a new Ansible playbook.
    Switch to Ansible and create a new YAML file.
    
-4. Define a play named deploy app in a new namespace.
+5. Define a play named deploy app in a new namespace.
     ```bash
-    
+    ---
+    - name: Deploy application in new namespace
+      hosts: localhost
+      tasks:
+      - name: Create a k8s namespace
+        kubernetes.core.k8s:
+          name: my-app
+          api_version: v1
+          kind: Namespace
    ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/play%201%20task%201.PNG" width=800 />
     
-5. Specify the kubeconfig path:
+6. Specify the kubeconfig path:
     Set the kubeconfig attribute in your playbook to specify the path to your kubeconfig file.
    <details><summary><strong> kubeconfig attribute </strong></summary>
      If no location is specified, Ansible uses the default path: ~/.kube/config
    </details>
    
    ```bash
+ - name: Deploy application in new namespace
+  hosts: localhost
+  tasks:
+  - name: Create a k8s namespace
+    kubernetes.core.k8s:
+      name: my-app
+      api_version: v1
+      kind: Namespace
+      kubeconfig: /home/lala/DevOpsBootCamp/terraform/Demo1/kubeconfiig_my_app-eks-cluster
    ```
    
-6. Verify Python dependencies.
+7. Verify Python dependencies.
     
    Ensure the following Python modules are installed: PyYAML, jsonpatch, and kubernetes.
    <details><summary><strong> Activate/ Deactivate Python ENV </strong></summary>
@@ -109,7 +127,7 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
    ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/5%20checking%20that%20th%20emodules%20are%20installed.PNG" width=800 />
    
-7. Install Python dependencies
+8. Install Python dependencies
 
    ```bash
    pip3 install pyyaml
@@ -118,39 +136,46 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
    ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/6%20installing%20modules.png" width=800 />
    
-8. Verify the Ansible inventory
+9. Verify the Ansible inventory
     Confirm that the inventory file points to the correct hosts.
      <img src="" width=800 />
     
-9. Run the Ansible playbook
+10. Run the Ansible playbook
     Execute your playbook to apply the configuration.
     ```bash
+    ansible-playbook 
     ```
      <img src="" width=800 />
     
-10. Set the kubeconfig for CLI access
+11. Set the kubeconfig for CLI access
     
     ```bash
     export KUBECOFNIG=/users/path/to/kubeconfig_file
     ```
      <img src="" width=800 />
      
-11. List namespaces in the cluster
+12. List namespaces in the cluster
     
     ```bash
     kubectl get namespaces
     ```
      <img src="" width=800 />
      
-12. Deploy the NGINX application.
+13. Deploy the NGINX application.
     
     Add a second task in your playbook to deploy the NGINX app to the Kubernetes cluster using files from previous modules.
     ```bash
+    - name: Deply nginx application
+      kubernetes.core.k8s:
+        src: /home/lala/DevOpsBootCamp/aws-eks/demo1/nginx-config.yaml
+        state: present
+        kubeconfig: /home/lala/DevOpsBootCamp/terraform/Demo1/kubeconfiig_my_app-eks-cluster
+        namespace: my-app
     ```
 
     <img src="" width=800 />
     
-13. Set the environment variable for Ansible
+14. Set the environment variable for Ansible
     Use the environment variable K8S_AUTH_KUBECONFIG to load the kubeconfig file automatically:
     
     ```bash

@@ -119,12 +119,13 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
        deactivate
      ```
   </details>
-    ```bash
-         python3 -c "import YAML"
-         python3 -c "import jsonptach"
-         python3 -c "import kubernetes"
-      ```
-      <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/5%20checking%20that%20th%20emodules%20are%20installed.PNG" width=800 />
+  
+  ```bash
+  python3 -c "import YAML"
+  python3 -c "import jsonptach"
+  python3 -c "import kubernetes"
+  ```
+  <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/5%20checking%20that%20th%20emodules%20are%20installed.PNG" width=800 />
    
 7. Install Python dependencies
     ```bash

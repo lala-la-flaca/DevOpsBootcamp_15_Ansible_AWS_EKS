@@ -109,25 +109,26 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
 8. Verify Python dependencies.
     
    Ensure the following Python modules are installed: PyYAML, jsonpatch, and kubernetes.
+
    <details><summary><strong> Activate/ Deactivate Python ENV </strong></summary>
-    Activate virtual ENV to install modules
-     ```bash
-         python3 -m venv venv
-         source venv/bin/activate
-     ```
-     ```bash
-        deactivate
-     ```
-  </details>
+      Activate virtual ENV to install modules
+       ```bash
+           python3 -m venv venv
+           source venv/bin/activate
+       ```
+       ```bash
+          deactivate
+       ```
+   </details>
    
-   ```bash
-   python3 -c "import YAML"
-   python3 -c "import jsonptach"
-   python3 -c "import kubernetes"
-   ```
-   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/5%20checking%20that%20th%20emodules%20are%20installed.PNG" width=800 />
+     ```bash
+     python3 -c "import YAML"
+     python3 -c "import jsonptach"
+     python3 -c "import kubernetes"
+     ```
+     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/5%20checking%20that%20th%20emodules%20are%20installed.PNG" width=800 />
    
-9. Install Python dependencies
+10. Install Python dependencies
 
    ```bash
    pip3 install pyyaml
@@ -136,32 +137,32 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
    ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/6%20installing%20modules.png" width=800 />
    
-10. Verify the Ansible inventory
+11. Verify the Ansible inventory
     Confirm that the inventory file points to the correct hosts.
      <img src="" width=800 />
     
-11. Run the Ansible playbook
+12. Run the Ansible playbook
     Execute your playbook to apply the configuration.
     ```bash
     ansible-playbook 
     ```
      <img src="" width=800 />
     
-12. Set the kubeconfig for CLI access
+13. Set the kubeconfig for CLI access
     
     ```bash
     export KUBECOFNIG=/users/path/to/kubeconfig_file
     ```
      <img src="" width=800 />
      
-13. List namespaces in the cluster
+14. List namespaces in the cluster
     
     ```bash
     kubectl get namespaces
     ```
      <img src="" width=800 />
      
-14. Deploy the NGINX application.
+15. Deploy the NGINX application.
     
     Add a second task in your playbook to deploy the NGINX app to the Kubernetes cluster using files from previous modules.
     ```bash
@@ -175,7 +176,7 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
 
     <img src="" width=800 />
     
-15. Set the environment variable for Ansible
+16. Set the environment variable for Ansible
     Use the environment variable K8S_AUTH_KUBECONFIG to load the kubeconfig file automatically:
     
     ```bash
@@ -183,16 +184,16 @@ This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, w
     ```
      <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/kubeconfig%20env%20var.PNG" width=800 />
      
-16. Verify connectivity
+17. Verify connectivity
     Confirm that the Ansible playbook can successfully connect to the EKS cluster.
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/eks%20cluster%20runnig.PNG" width=800 />
     
-17. Verify nginx is running
+18. Verify nginx is running
 
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/nginx%20pod%20running%20in%20eks.png" width=800 />
     
-18. Access to Nginx
+19. Access to Nginx
 
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_15_Ansible_AWS_EKS/blob/demo/ansible-demo6-eks/Img/nginx%20up.PNG" width=800 />
  

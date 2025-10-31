@@ -1,6 +1,8 @@
 # <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/1d67d697-03bf-466c-a71c-e118e5fd2614" /> Module 15 – Configuration Management with Ansible
 This exercise is part of Module 15 from the TWN DevOps Bootcamp. In Module 15, we focus on automating server setup and application deployment using Ansible. You learn how to configure servers, deploy Node.js and Nexus, integrate with Terraform and Jenkins, manage Docker containers, and organize playbooks with roles. Each demo builds practical automation skills for real-world DevOps environments.
 
+This demo shows how to automate Kubernetes application deployment using Ansible and Terraform. You create an EKS cluster with Terraform, then use Ansible to deploy an application into a new Kubernetes namespace. The goal is to combine infrastructure automation with configuration management, so the entire Kubernetes deployment process runs end to end with minimal manual steps.
+
 ---
 <a id="demo5"></a>
 # 📦Demo 6 – Ansible & AWS EKS

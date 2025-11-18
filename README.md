@@ -24,7 +24,8 @@ This demo shows how to automate Kubernetes application deployment using Ansible 
 # Prerequisites
 * AWS account with valid keys.
 * Terraform demo to deploy infrastructure.
-* Terraform files are available at: 🔗[TERRAFORM files](https://gitlab.com/devopsbootcamp4095512/devopsbootcamp_12_terraform_aws/-/tree/demo/ansible-terraform-3-eks?ref_type=heads)
+* Terraform files are available at:<br>
+  🔗[TERRAFORM files](https://gitlab.com/devopsbootcamp4095512/devopsbootcamp_12_terraform_aws/-/tree/demo/ansible-terraform-3-eks?ref_type=heads)
 * For Ansible controller node:
   * python >=3.6
   * boto3 >= 1.26.0
